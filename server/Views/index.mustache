@@ -1,0 +1,81 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">The Movie Input Site!</h1>
+    <p class="lead">Where you can post, filter, and delete your favorite movies</p>
+  </div>
+</div>
+    
+<form action="/" method="POST">
+    <h4>Title</h4> 
+    <input type="text" name="title" placeholder="Enter Movie"><br>
+    <h4>Description</h4>
+    <input type="text" name="description" placeholder="Enter Description"><br>
+    <h4>Genre</h4> 
+    <input type="text" name="genre" placeholder="Enter Genre"><br>
+    <h4>URL</h4> 
+    <input type="text" name="postURL" placeholder="Enter URL"><br><br>
+    <input type="submit" value="Submit"><br><br><br> 
+</form>
+
+    
+        
+{{#movies}}
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{postURL}}"     >
+  <div class="card-body">
+    <p class="card-text">
+      <ul>
+    
+        <li>
+           <strong> {{title}} </strong>
+        </li>
+        <li>
+            Description: {{description}}
+        </li>
+        <li>
+            Genre: {{genre}}
+        </li>
+      </ul>
+    </p>
+  </div>
+</div> 
+<form action="remove-movie" method="POST">
+<input type="hidden" name="movieName" value="{{title}}"/>
+<input type="submit" value="remove"> 
+</form>
+{{/movies}}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+</body>
+
+</html>
